@@ -10,6 +10,7 @@
 
 
     <TextView
+        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="닉네임" />
@@ -23,7 +24,6 @@
             android:id="@+id/myNickNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="본인닉네임표시" />
 
         <TextView
@@ -39,5 +39,44 @@
             android:text="변경" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/inputPhoneNumTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="상대방 전화번호 입력"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/callBtn"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="전화연결"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 
 </LinearLayout>
