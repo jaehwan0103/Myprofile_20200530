@@ -22,13 +22,28 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        val myUri = Uri.parse("tel:${inputPhoneNumTxt}")
-        val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+        callBtn.setOnClickListener {
 
-        startActivity(myIntent)
+            val phoneNum = inputPhoneNumTxt.text.toString()
 
+            val myUri = Uri.parse("tel:${phoneNum}")
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
 
+            startActivity(myIntent)
+        }
 
+        smsBtn.setOnClickListener {
+
+            val phoneNum = inputPhoneNumTxt.text.toString()
+            val smsDescription = smsTxt.text.toString()
+
+            val myUri2 = Uri.parse("smsto:${phoneNum}")
+            val myIntent2 = Intent(Intent.ACTION_SENDTO, myUri2)
+            myIntent2.putExtra("sms_body", "${smsDescription}")
+
+            startActivity(myIntent2)
+
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
