@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
             val phoneNum = inputPhoneNumTxt.text.toString()
 
-            val myUri = Uri.parse("tel:${phoneNum}")
+            val myUri = Uri.parse("tel:${phoneNum.replace("-","")}")
             val myIntent = Intent(Intent.ACTION_DIAL, myUri)
 
             startActivity(myIntent)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             val myUri2 = Uri.parse("smsto:${phoneNum}")
             val myIntent2 = Intent(Intent.ACTION_SENDTO, myUri2)
-            myIntent2.putExtra("sms_body", "${smsDescription}")
+            myIntent2.putExtra("sms_body", smsDescription)
 
             startActivity(myIntent2)
 
